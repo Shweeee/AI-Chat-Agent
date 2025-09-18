@@ -1,7 +1,7 @@
 import os
 import requests
-from dotenv import load_dotenv
-
+from dotenv import load_dotenv 
+import json
 load_dotenv()
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -13,15 +13,6 @@ def generate_ai_reply(memory_context: str, user_message: str) -> str:
     memory_context: previous messages from Mem0
     user_message: current user message
     """
-    import json
-    import requests
-    import os
-    from dotenv import load_dotenv
-
-    load_dotenv()
-    GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    if not GROQ_API_KEY:
-        raise ValueError("GROQ_API_KEY not set")
 
     try:
         headers = {

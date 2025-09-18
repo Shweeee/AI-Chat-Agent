@@ -6,6 +6,13 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+
+
+@app.get("/")
+def root():
+    return {"message": "AI Chat Backend is running 🚀"}
+
+
 # CORS for Next.js frontend
 app.add_middleware(
     CORSMiddleware,
