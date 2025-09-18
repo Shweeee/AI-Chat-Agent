@@ -1,0 +1,21 @@
+# LiveKit SDK for Python
+livekit-agents
+
+# HTTP requests
+requests
+
+# LLM providers 
+GROQ
+
+# Memory provider (mem0 from GitHub)
+git+https://github.com/mem0ai/mem0.git
+
+# Environment variable management
+python-dotenv
+
+# For structured data handling
+pydantic
+
+# Optional: Web framework for API endpoints
+fastapi
+uvicorn[standard]
