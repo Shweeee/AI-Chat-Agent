@@ -37,6 +37,8 @@ LIVEKIT_API_SECRET=<your_livekit_api_secret>
 LLM_API_KEY=<your_llm_api_key>
 GROQ_API_KEY=<your_groq_api_key>
 
+```
+
 ### Build and run backend with Docker
 ```bash
 docker build -t ai-chat-backend .
@@ -58,7 +60,7 @@ Request Body:
 Response:
 "AI response message"
 
-
+```
 ## Frontend (Optional)
 If using the Next.js chat UI:
 
@@ -74,4 +76,5 @@ Open http://localhost:3000 to start chatting.
 
 ## Author
 Swetha M. – Full Stack Developer
+
 
