@@ -1,138 +1,75 @@
-AI Chat Agent with LiveKit and Memory-Enhanced Context
-Overview
+# AI Chat Agent
 
-This project implements a real-time AI chat agent using LiveKit and RAG-based memory (mem0). The agent can recall previous conversations for personalized interactions and communicate with users via chat in real-time.
+A real-time AI chat agent with memory support, built with FastAPI, LiveKit, and mem0. 
+The agent can recall past conversations and respond contextually.
 
-Features
+## Features
+- Real-time chat using LiveKit
+- Memory-enhanced responses with mem0
+- Supports multiple LLM providers (OpenAI, Groq, OpenRouter)
+- Dockerized backend for easy deployment
+- Minimal frontend chat UI (Next.js optional)
 
-Users join a LiveKit room with a unique username.
+## Tech Stack
+- Backend: Python, FastAPI
+- Memory: mem0
+- Real-Time Communication: LiveKit
+- LLM: OpenAI / Groq / OpenRouter
+- Containerization: Docker
+- Environment Management: python-dotenv
+- Data Handling: pydantic
+- HTTP Requests: requests
 
-AI agent joins the room and responds contextually.
-
-Memory integration using mem0 to retrieve past interactions.
-
-Personalized responses combining current input and memory.
-
-Minimal frontend using Next.js or any chat UI.
-
-Dockerized backend for easy deployment.
-
-Tech Stack
-
-Backend: Python, FastAPI, LiveKit Agents SDK
-
-Frontend: Next.js (minimal chat UI)
-
-LLM Providers: OpenAI, Groq, or OpenRouter
-
-Memory Service: mem0 (RAG/Vector embeddings)
-
-Containerization: Docker
-
-Environment Management: python-dotenv
-
-API Requests: requests
-
-Data Models: pydantic
-
-Setup Instructions
-Prerequisites
-
-Python 3.11+
-
-Docker & Docker Compose
-
-Git
-
-Backend Setup
-
-Clone the repo:
-
+## Setup
+### Clone the repository
+```bash
 git clone https://github.com/Shweeee/AI-Chat-Agent.git
 cd AI-Chat-Agent/backend
 
 
-Create .env file with the following environment variables:
+```markdown
+### Configure environment variables
+Create a `.env` file with:
 
 MEM0_API_KEY=<your_mem0_api_key>
 LIVEKIT_API_KEY=<your_livekit_api_key>
 LIVEKIT_API_SECRET=<your_livekit_api_secret>
 LLM_API_KEY=<your_llm_api_key>
 
-
-Build and run Docker container:
-
+### Build and run backend with Docker
+```bash
 docker build -t ai-chat-backend .
 docker run --env-file .env -p 8000:8000 ai-chat-backend
 
 
-Backend will be available at:
+```markdown
+## API
 
-http://localhost:8000
-
-API Usage
-
-Endpoint: POST /message
+### POST /message
+Send a message to the AI agent.
 
 Request Body:
-
 {
   "username": "string",
   "message": "string"
 }
 
+Response:
+"AI response message"
 
-Response: AI-generated message (string)
 
-Frontend Setup
-
-Navigate to frontend folder (if using Next.js) and install dependencies:
+## Frontend (Optional)
+If using the Next.js chat UI:
 
 cd ../frontend
 npm install
 npm run dev
 
+Open http://localhost:3000 to start chatting.
 
-Open the chat UI in browser (http://localhost:3000) and join a room.
+## Docker Notes
+- .env is ignored in Git
+- Always provide environment variables using --env-file
 
-Docker Notes
-
-.env is excluded from Git.
-
-Backend is fully containerized.
-
-Ensure environment variables are passed when running Docker.
-
-Demo
-
-Record a Loom video showing:
-
-User joining a LiveKit room.
-
-AI agent responding.
-
-Memory-based responses from previous sessions.
-
-Optional Extensions
-
-Multi-agent memory sharing.
-
-Save new conversations to memory store.
-
-Add speech-to-text / text-to-speech.
-
-Repository Structure
-backend/
-  ├─ app.py
-  ├─ memory.py
-  ├─ Dockerfile
-  ├─ requirements.txt
-  └─ .env (ignored)
-frontend/
-  ├─ pages/
-  ├─ components/
-  └─ ...
-
-Author
-
-Swetha M. – Digital Engineer / Full Stack Developer
+## Author
+Swetha M. – Full Stack Developer
