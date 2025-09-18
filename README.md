@@ -14,7 +14,7 @@ The agent can recall past conversations and respond contextually.
 - Backend: Python, FastAPI
 - Memory: mem0
 - Real-Time Communication: LiveKit
-- LLM: OpenAI / Groq / OpenRouter
+- LLM: Groq
 - Containerization: Docker
 - Environment Management: python-dotenv
 - Data Handling: pydantic
@@ -35,6 +35,7 @@ MEM0_API_KEY=<your_mem0_api_key>
 LIVEKIT_API_KEY=<your_livekit_api_key>
 LIVEKIT_API_SECRET=<your_livekit_api_secret>
 LLM_API_KEY=<your_llm_api_key>
+GROQ_API_KEY=<your_groq_api_key>
 
 ### Build and run backend with Docker
 ```bash
@@ -73,3 +74,4 @@ Open http://localhost:3000 to start chatting.
 
 ## Author
 Swetha M. – Full Stack Developer
+
