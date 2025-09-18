@@ -44,6 +44,7 @@ GROQ_API_KEY=<your_groq_api_key>
 docker build -t ai-chat-backend .
 docker run --env-file .env -p 8000:8000 ai-chat-backend
 
+```
 
 ```markdown
 ## API
@@ -76,5 +77,6 @@ Open http://localhost:3000 to start chatting.
 
 ## Author
 Swetha M. – Full Stack Developer
+
 
 
